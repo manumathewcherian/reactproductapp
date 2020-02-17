@@ -7,7 +7,8 @@ class App extends React.Component {
     super(props)
     this.state = {
       firstState: 'hello World',
-      cartCount: 0
+      cartCount: 0 ,
+      alertOncartCount : 10
     }
   }
   componentDidMount() {
@@ -16,7 +17,10 @@ class App extends React.Component {
     })
   }
   componentDidUpdate(prevProps, prevState){
-    console.log(this.state)
+    if(this.state.cartCount >= this.state.alertOncartCount)
+    {
+      alert('Oops cart limit exceeded')
+    }
   }
   addCount()
   {
