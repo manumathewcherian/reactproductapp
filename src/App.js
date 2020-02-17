@@ -3,6 +3,9 @@ import logo, { ReactComponent } from './logo.svg';
 import './App.css';
 
 class App extends React.Component {
+  componentDidMount() {
+    console.log('successfully mount')
+  }
   render() {
     return (
       <div>
@@ -21,11 +24,11 @@ class App extends React.Component {
               <div className="my-list">
                 <img
                   className="imm"
-                  src="http://hpservicecenterschennai.in/images/hp_laptop_service_centers_in_guindy.png"
-                  alt="dsadas"
+                  src="https://rukminim1.flixcart.com/image/704/704/jdyuefk0/computer/t/u/4/hp-na-laptop-original-imaf2rdcgrw8nzfv.jpeg?q=70"
+                  alt="dsadas" width="300" height="230"
                 />
                 <h3>HP Core i3 6th Gen</h3>
-                <span>RS:45K</span>
+                <span> RS:45K </span>
                 <a href="#" className="btn btn-info">Add To Cart</a>
               </div>
             </div>
