@@ -3,8 +3,26 @@ import logo, { ReactComponent } from './logo.svg';
 import './App.css';
 
 class App extends React.Component {
+  constructor(props){
+    super(props)
+    this.state = {
+      firstState: 'hello World',
+      cartCount: 0
+    }
+  }
   componentDidMount() {
-    console.log('successfully mount')
+    this.setState({
+      firstState: 'Welcome to our shop'
+    })
+  }
+  componentDidUpdate(prevProps, prevState){
+    console.log(this.state)
+  }
+  addCount()
+  {
+    const newCount = this.state.cartCount + 1;
+    this.setState({cartCount = newCount
+    })
   }
   render() {
     return (
@@ -15,7 +33,8 @@ class App extends React.Component {
               width="30" height="30" className="d-inline-block align-top" alt="" />
             Amazon
           </a>
-          <button type="button" className="btn btn-success">Cart</button>
+          {this.state.firstState}
+          <button type="button" className="btn btn-success" onClick>Add to Cart</button>
         </nav>
         <div className="container">
           <p className="sh">Laptops</p>
