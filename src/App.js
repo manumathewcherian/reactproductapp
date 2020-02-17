@@ -21,7 +21,7 @@ class App extends React.Component {
   addCount()
   {
     const newCount = this.state.cartCount + 1;
-    this.setState({cartCount = newCount
+    this.setState({cartCount : newCount
     })
   }
   render() {
@@ -34,7 +34,9 @@ class App extends React.Component {
             Amazon
           </a>
           {this.state.firstState}
-          <button type="button" className="btn btn-success" onClick>Add to Cart</button>
+          <button type="button" className="btn btn-success"  
+          >Cart {this.state.cartCount}
+          </button>
         </nav>
         <div className="container">
           <p className="sh">Laptops</p>
@@ -48,12 +50,13 @@ class App extends React.Component {
                 />
                 <h3>HP Core i3 6th Gen</h3>
                 <span> RS:45K </span>
-                <a href="#" className="btn btn-info">Add To Cart</a>
+                <a href="#" className="btn btn-info" onClick={() => {this.addCount()}
+          }>Add To Cart</a>
               </div>
             </div>
           </div>
           <div className="row d-flex justify-content-end">
-            <button type="button" className="btn btn-primary" id="er">Checkout</button>
+            <button type="button" className="btn btn-primary" id="er">CHECKOUT </button>
           </div>
         </div>
       </div>
