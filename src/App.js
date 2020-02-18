@@ -14,6 +14,8 @@ class App extends React.Component {
     }
   }
   componentDidMount() {
+    this.loadproducts();
+    this.initCart();
     this.setState({
       firstState: 'Welcome to our shop'
     })
@@ -24,10 +26,20 @@ class App extends React.Component {
       alert('Oops cart limit exceeded')
     }
   }
+  initCart()
+  {
+    let mycart = localStorage.getItem('cart')
+    mycart = JSON.parse(mycart)
+    this.setState({
+      cart: mycart || []
+    })
+  }
   addtoCart(product)
   {
     const newCart = this.state.cart;
     newCart.push(product);
+
+    localStorage.setItem('cart', JSON.stringify(newCart))
     this.setState({
       cart: newCart
     })
