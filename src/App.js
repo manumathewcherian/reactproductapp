@@ -52,8 +52,20 @@ class App extends React.Component {
   }
   loadproducts()
   {
-    this.setState({
-      products: productsArray
+    fetch('http://my-json-server.typicode.com/shiyasvp92/sample_products/products', {
+      method: 'GET'
+    })
+    .then((response) => {
+      return response.json()
+    })
+    .then((data)=> {
+      console.log(data)
+      this.setState({
+        products: data
+      })
+    })
+    .catch((error)=> {
+      console.error(error)
     })
   }
   render() {
