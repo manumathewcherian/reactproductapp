@@ -1,5 +1,5 @@
 import React from "react";
-export default function productfile(addCount,product) {
+export default function productfile(addtoCart,product) {
     return (
           <div className="row">
             <div className="col-3">
@@ -11,7 +11,7 @@ export default function productfile(addCount,product) {
                 />
                 <h3>{product.title}</h3>
                 <span>{product.price}</span>
-                <a href="#" className="btn btn-info" onClick={() => {addCount()}
+                <a href="#" className="btn btn-info" onClick={() => {addtoCart(product)}
           }>Add To Cart</a>
               </div>
             </div>
