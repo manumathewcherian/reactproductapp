@@ -1,7 +1,7 @@
 import React from 'react';
 import logo, { ReactComponent } from './logo.svg';
 import './App.css';
-
+import productfile from './components/productfile';
 class App extends React.Component {
   constructor(props){
     super(props)
@@ -59,6 +59,7 @@ class App extends React.Component {
               </div>
             </div>
           </div>
+          {productfile()}
           <div className="row d-flex justify-content-end">
             <button type="button" className="btn btn-primary" id="er">CHECKOUT </button>
           </div>
