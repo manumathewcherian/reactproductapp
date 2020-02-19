@@ -10,6 +10,10 @@ export default class Cart extends React.Component {
     componentDidMount() {
         this.initCart();
       }
+    removecart()
+    {
+
+    }
     initCart()
     {
       let mycart = localStorage.getItem('cart')
@@ -30,7 +34,7 @@ export default class Cart extends React.Component {
             Amazon Cart
           </a>
           <button type="button" className="btn btn-success" onclick={() => {
-            this.viewCart();
+            this.removecart();
           }}>
             Clear Cart ({this.state.cart.length})
           </button>
