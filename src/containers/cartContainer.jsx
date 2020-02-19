@@ -12,7 +12,10 @@ export default class Cart extends React.Component {
       }
     removecart()
     {
-
+        localStorage.setItem('cart',JSON.stringify([]))
+        this.setState({
+            cart:[]
+        })
     }
     initCart()
     {
@@ -33,13 +36,16 @@ export default class Cart extends React.Component {
               width="30" height="30" className="d-inline-block align-top" alt="" />
             Amazon Cart
           </a>
-          <button type="button" className="btn btn-success" onclick={() => {
+          <button type="button" className="btn btn-success" onClick={() => {
             this.removecart();
           }}>
             Clear Cart ({this.state.cart.length})
           </button>
         </nav>
             {productlist}
+            <div className="row d-flex justify-content-end">
+            <button type="button" className="btn btn-primary" id="er">CHECKOUT </button>
+          </div>
         </div>
         )
     }
