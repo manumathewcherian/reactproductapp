@@ -2,6 +2,9 @@ import React from 'react';
 import logo, { ReactComponent } from './logo.svg';
 import './App.css';
 import productfile from './components/productfile';
+import Cart from './containers/cartContainer';
+import { Link } from 'react-router-dom';
+
 class App extends React.Component {
   constructor(props){
     super(props)
@@ -80,14 +83,16 @@ class App extends React.Component {
             Amazon
           </a>
           {this.state.firstState}
+          <Link to ='./cart'>
           <button onClick={() =>{this.loadproducts()}}>load products</button>
           <button type="button" className="btn btn-success" onclick={() => {
             this.viewCart();
           }}>
             Cart ({this.state.cart.length})
           </button>
+          </Link> 
         </nav>
-        <div className="container">
+                <div className="container">
           <p className="sh">Laptops</p>   
           {productlist}
           <div className="row d-flex justify-content-end">
